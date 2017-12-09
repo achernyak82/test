@@ -1,0 +1,15 @@
+.card-content{
+  height: 130px;
+}
+
+.marked {
+  font-weight: bold;
+  color: cyan!important; /*-- important перетереть стандартные стили --*/
+}
+
+.hovered{
+  transform: scale(1.10);
+  box-shadow: 0 0 10px rgba(0,230,0,.50);
+  transition: .5s all;
+  z-index: 1000;
+}

@@ -2,7 +2,7 @@
 import {Directive, HostBinding, HostListener} from '@angular/core';
 
 @Directive({ // специальный декоратор, говорит что это директива
-  selector : '[appHover]' // указываем селектор для жирективы
+  selector : '[appHover]' // указываем селектор для директивы
 })
 export class HoverDirective {
  // декратор для привязки определенного свойства к переменной

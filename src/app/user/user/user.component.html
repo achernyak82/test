@@ -1,0 +1,24 @@
+
+  <div class="col s3" >
+    <div class="card" appHover><!-- здесь вешаем собственную директиву-->
+      <div class="card-image">
+        <img src="{{ user.image}}">
+        <span
+          class="card-title"
+          [ngClass]="{'marked': isMarkedFirstTime}"><!-- байндим директиву, добавляем класс CSS динамически по условию -->
+            <!-- вертикальная черта - это вызов пайпа -->
+          {{user.name | uppercase}}
+        </span>
+      </div>
+      <div class="card-content"
+           [ngClass]="{'marked': isMarkedFirstTime}">
+        <p>{{ user.geo }}</p>
+      </div>
+      <div class="card-action"
+        (click)="onClick()"><!-- здесь вещается обработчик события, в данном случае по клику. После этого обработчик надо
+        создать в компоненте-->
+        <a class="waves-effect waves-light btn">Отметить</a>
+      </div>
+    </div>
+  </div>
+

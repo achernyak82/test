@@ -1,23 +1,17 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Application</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a routerLink="/">Main</a></li> <!-- делаем ссылку понятную Ангулуару с помощью директивы routerLink -->
+      <li><a routerLink="/setup">Settings</a></li>
+    </ul>
+  </div>
+</nav>
+
 
 <div class="container">
-
-  <div class="row">
-    <div class="input-field col s6">
-      <input id="first_name" type="text" class="validate" [(ngModel)]="searchStr">
-      <!-- ngModel будет следить автоматом за изменениями внутри. Two-way binding -->
-      <label class="active" for="first_name">Поиск по имени</label>
-    </div>
-  </div>
-
-    <div class="row">
-      <app-user *ngFor="let u of users | search:searchStr" <!-- применяем свой пайп для поиска по имени -->
-      <!-- в пайп параметры через двоеточие -->
-      [user] = "u"
-      >
-        <!-- one way binding [user] - это не обычная переменная, а целый объект, который мы передаем в компонент
-        без квадратных скобок это было бы присвоение строки-->
-      </app-user>
-    </div>
+ <!-- указываем Ангулару что именно тут надо отображать страницы -->
+  <router-outlet></router-outlet>
 
 </div>
 

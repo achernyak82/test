@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="input-field col s6">
+    <input id="first_name" type="text" class="validate" [(ngModel)]="searchStr">
+    <!-- ngModel будет следить автоматом за изменениями внутри. Two-way binding -->
+    <label class="active" for="first_name">Поиск по имени</label>
+  </div>
+</div>
+
+<div class="row">
+  <!-- применяем свой пайп для поиска по имени -->
+  <app-user *ngFor="let u of users | search:searchStr"
+
+            [user] = "u"
+  >
+    <!-- в пайп параметры через двоеточие -->
+    <!-- one way binding [user] - это не обычная переменная, а целый объект, который мы передаем в компонент
+    без квадратных скобок это было бы присвоение строки-->
+  </app-user>
+</div>
